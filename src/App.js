@@ -65,13 +65,19 @@ export default class App extends Component {
         let current = sentence.charAt(i);
         if (current === "F") {
           //random color
-          p5.stroke(p5.random(0, 250), p5.random(0, 250), p5.random(0, 250));
+          p5.stroke("brown");
+          p5.line(0, 0, 0, -len);
+          p5.translate(0, -len);
+        }
+        if (current === "X") {
+          //random color
+          p5.stroke("green");
           p5.line(0, 0, 0, -len);
           p5.translate(0, -len);
         }
         if (current === "L") {
           //random color
-          p5.stroke(p5.random(0, 250), p5.random(0, 250), p5.random(0, 250));
+          p5.stroke("p5.random(0, 250), p5.random(0, 250), p5.random(0, 250)");
           p5.line(0, 0, 0, -len);
           p5.translate(0, -len);
         }
@@ -106,15 +112,21 @@ export default class App extends Component {
 
     // generate sentence for tree
     const generate = () => {
-      //снежинка
+      // //снежинка
       // angle = 60;
       // axiom = "F++F++F";
       // rules[0] = {
       //   a: "F",
       //   b: "F-F++F-F",
       // };
+      // // settings
       // mod = 0.01;
-      // iteration = 5;
+      // iteration = 1;
+      // strWeight = 1;
+      // scl = 10;
+      // posX = 200;
+      // posY = 80;
+      // bgColor = "#8BC78B";
 
       // //Серпинский
       // angle = 60;
@@ -131,9 +143,10 @@ export default class App extends Component {
       // mod = 0.02;
       // iteration = 10;
       // strWeight = 1;
-      // scl = 2;
+      // scl = 0.8;
       // posX = 350;
       // posY = -40;
+      // bgColor = "#8BC78B";
 
       //дракон
       // angle = 90;
@@ -148,11 +161,12 @@ export default class App extends Component {
       // };
       // //settings
       // mod = 0.1;
-      // iteration = 8;
+      // iteration = 12;
       // scl = 1;
-      // posX = 150;
-      // posY = 120;
+      // posX = 260;
+      // posY = 100;
       // strWeight = 2;
+      // bgColor = "#8BC78B";
 
       //побеги
       angle = 50;
@@ -166,13 +180,13 @@ export default class App extends Component {
         b: "F[+X]F[-X]+X",
       };
       // settings
-      mod = 0.01;
-      iteration = 10;
-      scl = 0.15;
+      mod = 0.005;
+      iteration = 6;
+      scl = 4;
       strWeight = 6;
       posX = 180;
       posY = 20;
-      bgColor = p5.random(200, 250);
+      bgColor = "#8BC78B";
 
       len *= mod; // модификатор на длинну сегмента на рендер
 
